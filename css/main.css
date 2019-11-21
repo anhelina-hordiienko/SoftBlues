@@ -5,18 +5,21 @@ body {
   background-color: white; }
 
 .container {
-  width: 841px;
+  width: 98%;
+  max-width: 841px;
   margin: 0 auto; }
 
 .header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  height: 80px; }
+  padding: 20px 0; }
 
 .nav {
   display: flex;
-  justify-content: space-between; }
+  justify-content: flex-start;
+  flex-wrap: wrap; }
   .nav__link {
     font-family: Tahoma, Verdana, 'Segoe UI', sans-serif;
     font-size: 16px;
@@ -37,14 +40,15 @@ body {
 .article-lead {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   background-color: #f0f0f0;
   font-family: Tahoma, Verdana, 'Segoe UI', sans-serif;
   padding: 20px 30px; }
   .article-lead-image {
-    width: 380px;
-    height: 230px; }
+    width: 48.5%;
+    height: auto; }
   .article-lead-content {
-    width: 380px; }
+    width: 48.5%; }
     .article-lead-content__header {
       font-size: 21px;
       line-height: 28px;
@@ -69,12 +73,14 @@ body {
     margin-bottom: 0; }
   .article-content-columns {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    height: 98px; }
+    padding-bottom: 27px; }
     .article-content-columns-column {
       display: flex;
-      align-items: center; }
+      align-items: center;
+      padding-top: 27px; }
       .article-content-columns-column:nth-of-type(3) {
         margin-left: 20px; }
       .article-content-columns-column__text {
@@ -87,3 +93,25 @@ body {
         width: 140px; }
         .article-content-columns-column__text_narrow {
           width: 102px; }
+
+@media screen and (max-width: 767px) {
+  .nav {
+    width: 100%;
+    padding-top: 20px; }
+  .article-lead-image {
+    width: 100%;
+    padding-bottom: 20px; }
+  .article-lead-content {
+    width: 100%; }
+  .article-content-columns-column {
+    width: 48%; }
+    .article-content-columns-column:nth-of-type(3) {
+      margin-left: 0; }
+    .article-content-columns-column .calculator {
+      padding: 0 5px; }
+    .article-content-columns-column__text {
+      width: auto; } }
+
+@media screen and (max-width: 480px) {
+  .article-content-columns-column {
+    width: 100%; } }

@@ -5,18 +5,21 @@ body {
   background-color: rgb(255, 255, 255);
 }
 .container {
-  width: 841px;
+  width: 98%;
+  max-width: 841px;
   margin: 0 auto;
 }
 .header {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  height: 80px;
+  padding: 20px 0;
 }
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   &__link {
     font-family: Tahoma, Verdana, 'Segoe UI', sans-serif;
     font-size: 16px;
@@ -40,15 +43,16 @@ body {
   &-lead {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     background-color: rgb(240, 240, 240);
     font-family: Tahoma, Verdana, 'Segoe UI', sans-serif;
     padding: 20px 30px;
     &-image {
-      width: 380px;
-      height: 230px;
+      width: 48.5%;
+      height: auto;
     }
     &-content {
-      width: 380px;
+      width: 48.5%;
       &__header {
         font-size: 21px;
         line-height: 28px;
@@ -77,12 +81,14 @@ body {
     }
     &-columns {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      height: 98px;
+      padding-bottom: 27px;
       &-column {
         display: flex;
         align-items: center;
+        padding-top: 27px;
         &:nth-of-type(3) {
           margin-left: 20px;
         }
@@ -100,5 +106,45 @@ body {
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .article {
+    &-lead {
+      &-image {
+        width: 100%;
+        padding-bottom: 20px;
+      }
+      &-content {
+        width: 100%;
+      }
+    }
+    &-content {
+      &-columns {
+        &-column {
+          width: 48%;
+          &:nth-of-type(3) {
+            margin-left: 0;
+          }
+          .calculator {
+            padding: 0 5px;
+          }
+          &__text {
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .article-content-columns-column {
+    width: 100%;
   }
 }
